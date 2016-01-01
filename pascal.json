@@ -1,0 +1,305 @@
+{
+    "version": 8,
+    "name": "pascal_pastel2",
+    "center": [
+        -81.68912473893322,
+        41.47562500844927
+    ],
+    "zoom": 13.414085915913635,
+    "bearing": 0,
+    "pitch": 0,
+    "sources": {
+        "mapbox://mapbox.mapbox-streets-v6": {
+            "url": "mapbox://mapbox.mapbox-streets-v6",
+            "type": "vector"
+        }
+    },
+    "sprite": "mapbox://sprites/skorasaurus/cigs9fqnm005aa6ksj3qxe742",
+    "glyphs": "mapbox://fonts/skorasaurus/{fontstack}/{range}.pbf",
+    "layers": [
+        {
+            "id": "background",
+            "type": "background",
+            "paint": {
+                "background-color": "#F8FDF0",
+                "background-opacity": 1
+            },
+            "interactive": true
+        },
+        {
+            "interactive": true,
+            "layout": {
+                "visibility": "visible",
+                "line-join": "bevel"
+            },
+            "filter": [
+                "all",
+                [
+                    "==",
+                    "$type",
+                    "LineString"
+                ],
+                [
+                    "in",
+                    "admin_level",
+                    4,
+                    3
+                ]
+            ],
+            "type": "line",
+            "source": "mapbox://mapbox.mapbox-streets-v6",
+            "id": "admin_regional",
+            "paint": {
+                "line-color": "rgba(4,4,6,1)",
+                "line-width": {
+                    "base": 1,
+                    "stops": [
+                        [
+                            5,
+                            1
+                        ],
+                        [
+                            6,
+                            1.4
+                        ],
+                        [
+                            13,
+                            2
+                        ]
+                    ]
+                }
+            },
+            "source-layer": "admin"
+        },
+        {
+            "interactive": true,
+            "layout": {
+                "visibility": "visible"
+            },
+            "filter": [
+                "==",
+                "$type",
+                "Polygon"
+            ],
+            "type": "fill",
+            "source": "mapbox://mapbox.mapbox-streets-v6",
+            "id": "water",
+            "paint": {
+                "fill-color": "rgba(89,229,255,1)",
+                "fill-opacity": 1,
+                "fill-antialias": true
+            },
+            "source-layer": "water"
+        },
+        {
+            "interactive": true,
+            "layout": {
+                "visibility": "none"
+            },
+            "filter": [
+                "all",
+                [
+                    "==",
+                    "$type",
+                    "LineString"
+                ],
+                [
+                    "in",
+                    "type",
+                    "primary",
+                    "primary_link",
+                    "motorway",
+                    "motorway_link"
+                ]
+            ],
+            "type": "line",
+            "source": "mapbox://mapbox.mapbox-streets-v6",
+            "id": "road",
+            "paint": {
+                "line-opacity": 1,
+                "line-color": "rgba(235,54,54,1)",
+                "line-dasharray": [
+                    0,
+                    0
+                ]
+            },
+            "source-layer": "road"
+        },
+        {
+            "interactive": true,
+            "minzoom": 5,
+            "layout": {
+                "visibility": "visible",
+                "line-join": "round",
+                "line-cap": "round"
+            },
+            "filter": [
+                "all",
+                [
+                    "==",
+                    "$type",
+                    "LineString"
+                ],
+                [
+                    "==",
+                    "class",
+                    "motorway"
+                ]
+            ],
+            "type": "line",
+            "source": "mapbox://mapbox.mapbox-streets-v6",
+            "id": "major_case",
+            "paint": {
+                "line-dasharray": [
+                    1,
+                    0
+                ],
+                "line-translate": {
+                    "base": 1,
+                    "stops": [
+                        [
+                            0,
+                            [
+                                0,
+                                0
+                            ]
+                        ],
+                        [
+                            22,
+                            [
+                                0,
+                                0
+                            ]
+                        ]
+                    ]
+                },
+                "line-width": {
+                    "base": 1,
+                    "stops": [
+                        [
+                            0,
+                            41
+                        ],
+                        [
+                            8,
+                            1.5
+                        ],
+                        [
+                            10,
+                            3
+                        ],
+                        [
+                            13,
+                            3.75
+                        ],
+                        [
+                            14,
+                            5
+                        ],
+                        [
+                            15,
+                            7
+                        ],
+                        [
+                            16,
+                            9
+                        ]
+                    ]
+                },
+                "line-color": "rgba(179,64,0,1)",
+                "line-opacity": 1,
+                "line-translate-anchor": "viewport"
+            },
+            "source-layer": "road"
+        },
+        {
+            "interactive": true,
+            "minzoom": 3,
+            "layout": {
+                "visibility": "visible",
+                "line-join": "round",
+                "line-cap": "round"
+            },
+            "filter": [
+                "all",
+                [
+                    "==",
+                    "$type",
+                    "LineString"
+                ],
+                [
+                    "==",
+                    "class",
+                    "motorway"
+                ]
+            ],
+            "type": "line",
+            "source": "mapbox://mapbox.mapbox-streets-v6",
+            "id": "major",
+            "paint": {
+                "line-dasharray": [
+                    1,
+                    0
+                ],
+                "line-translate": {
+                    "base": 1,
+                    "stops": [
+                        [
+                            0,
+                            [
+                                0,
+                                0
+                            ]
+                        ],
+                        [
+                            22,
+                            [
+                                0,
+                                0
+                            ]
+                        ]
+                    ]
+                },
+                "line-width": {
+                    "base": 1,
+                    "stops": [
+                        [
+                            8,
+                            0.5
+                        ],
+                        [
+                            10,
+                            1
+                        ],
+                        [
+                            13,
+                            2
+                        ],
+                        [
+                            14,
+                            3.5
+                        ],
+                        [
+                            15,
+                            5
+                        ],
+                        [
+                            16,
+                            7
+                        ]
+                    ]
+                },
+                "line-color": "#F8FDF0",
+                "line-opacity": 1,
+                "line-gap-width": 0,
+                "line-translate-anchor": "viewport"
+            },
+            "source-layer": "road"
+        }
+    ],
+    "created": "2015-11-09T18:06:15.054Z",
+    "id": "cigs9fqnm005aa6ksj3qxe742",
+    "modified": "2016-01-01T17:56:41.321Z",
+    "owner": "skorasaurus",
+    "draft": false
+}
